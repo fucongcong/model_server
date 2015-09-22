@@ -1,5 +1,5 @@
 # 用于数据服务层使用的框架
-##是基于swoole框架（Hprose）的基础上进行的业务扩展。良好的支持了数据层与服务层的数据吞吐。支持thinkphp的model层的扩展
+##支持分布式，支持TCP，HTTP协议。是基于swoole框架（Hprose）的基础上进行的业务扩展。良好的支持了数据层与服务层的数据吞吐。支持thinkphp的model层的扩展
 
 ####1.[框架使用的简介](#user-content-框架使用的简介)
 - [安装](#user-content-安装)
