@@ -48,7 +48,8 @@
 ####3开放服务接口的配置
 src/routing.php（配置你所需要向外暴露的服务层的接口信息）
 注意：如果改配置下得模块或者方法不存在时，会抛异常！或者参数配置错误，那么客户端调用接口服务时会报错！
-     //模块名
+
+    //模块名
     'Special' => [
         //该模块下得服务
         'Special' => [
@@ -79,6 +80,7 @@ src/routing.php（配置你所需要向外暴露的服务层的接口信息）
 ####4常用的函数介绍
 
 (1) D() 获取一个实例化的自定义模型
+
     // 模块名   模型名            自定义方法  注：Thinkphp使用方法一致！
     D('Special.SpecialType') -> getTypesById($id);
 
@@ -91,6 +93,7 @@ src/routing.php（配置你所需要向外暴露的服务层的接口信息）
 
     //只能获取config/app.php中得配置
     C('environment')
+
     //如果需要获取config下所有文件得配置，可以这样
     use Config;
     Config::get('server::tcp');// get("文件名::配置名称")
