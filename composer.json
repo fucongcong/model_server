@@ -1,4 +1,16 @@
 {
+    "name": "Server for Model",
+    "description": "A PHP Framework for Service And Model.",
+    "keywords": ["framework", "Swoole"],
+    "type": "project",
+    "authors": [
+        {
+            "name": "Fu congcong",
+            "email": "cc@xitongxue.com",
+            "homepage": "https://github.com/fucongcong",
+            "role": "Lead Developer"
+        }
+    ],
     "require": {
         "hprose/hprose": "dev-master",
         "phpunit/phpunit": "4.*"

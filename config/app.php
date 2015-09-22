@@ -31,6 +31,7 @@ return [
         'Container' => 'core\Container\Container',
         'Model' => 'core\Model\Model',
         'Service' => 'core\Service\Service',
+        'Test' => 'core\Test\Test',
     ],
 
 

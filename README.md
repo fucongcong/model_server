@@ -8,6 +8,7 @@
 - [2数据Model层](#user-content-2数据Model层)
 - [3开放服务接口的配置](#user-content-3开放服务接口的配置)
 - [4常用的函数介绍](#user-content-4常用的函数介绍)
+- [5单元测试](#user-content-5单元测试)
 
 ## 框架使用的简介
 ####环境依赖
@@ -36,6 +37,7 @@
     - Services （服务层）
         - Special (示例)
             - Impl （服务层接口）
+            - Tests（单元测试）
     - routing.php （路由配置，需要暴露的接口）
 - index.php(主入口，运行即可)
 
@@ -102,3 +104,7 @@ src/routing.php（配置你所需要向外暴露的服务层的接口信息）
 
     //和Thinkphp的S方法一致
     S('key', value, expireTime)
+
+####5单元测试
+    //测试服务层所有接口
+    phpunit --bootstrap test.php src/
