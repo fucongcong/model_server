@@ -1,12 +1,12 @@
 <?php
-namespace src\Services\Special;
+namespace src\Model\Special;
 
-interface SpecialTypeService
+interface SpecialTypeModel
 {
     public function addSpecialType($special_id, $type_id);
 
     public function getTypesById($special_id);
 
     public function deleteType($special_id);
-}
 
+}

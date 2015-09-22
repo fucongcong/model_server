@@ -10,6 +10,13 @@ return [
     'DB_CHARSET' => 'utf8mb4', //数据库编码方式
     'DB_PREFIX' => 'bcy_', // 数据表前缀
 
+    'DATA_CACHE_TYPE' => 'Redis',
+    'DATA_CACHE_PREFIX' => 'bcy:cache:',
+
+    'REDIS_HOST' => '192.168.1.4',
+    'REDIS_PORT' => '6379',
+    'REDIS_AUTH' => '',
+
     // prod|dev
     'environment' => 'prod',
 
@@ -22,7 +29,7 @@ return [
         'Config'    => 'core\Config\Config',
         'Container' => 'core\Container\Container',
         'Model' => 'core\Model\Model',
-
+        'Service' => 'core\Service\Service',
     ],
 
 

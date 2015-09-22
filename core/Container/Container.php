@@ -85,7 +85,7 @@ function {$key}({$parameters}) {
 
 ";
         }
-        file_put_contents(__ROOT__."src/function.php", $data);
+        file_put_contents(__ROOT__."runtime/function.php", $data);
     }
 
     /**

@@ -1,5 +1,7 @@
 <?php
 namespace core\Model;
+use core\Model\DB;
+use Exception;
 // +----------------------------------------------------------------------
 // | ThinkPHP [ WE CAN DO IT JUST THINK IT ]
 // +----------------------------------------------------------------------
@@ -284,7 +286,7 @@ class Model{
             $where[$field] = $args[0];
             return $this->where($where)->find();
         } else {
-            throw_exception(__CLASS__ . ':' . $method . L('_METHOD_NOT_EXIST_'));
+            throw new Exception(__CLASS__ . ':' . $method . L('_METHOD_NOT_EXIST_'));
             return;
         }
     }

@@ -35,7 +35,7 @@ class Config implements ConfigContract
 
             $config = $this -> checkConfig($configName[0], $configName[1]);
 
-            return $config[$configName[1]];
+            return isset($config[$configName[1]]) ? $config[$configName[1]] : null;
 
         }
 

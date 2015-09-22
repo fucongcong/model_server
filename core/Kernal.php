@@ -11,7 +11,6 @@ class Kernal
 
     public function __construct($server_type)
     {
-
         $this -> aliasLoader();
 
         $this -> server_type = $server_type;
@@ -31,7 +30,7 @@ class Kernal
         //init function
         Container::getInstance() -> init($routing);
 
-        require(__ROOT__."src/function.php");
+        require(__ROOT__."runtime/function.php");
         $this -> matchRoute($routing, $server);
 
         $server->start();

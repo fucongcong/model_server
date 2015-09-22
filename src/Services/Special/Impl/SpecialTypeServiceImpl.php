@@ -2,13 +2,24 @@
 namespace src\Services\Special\Impl;
 
 use src\Services\Special\SpecialTypeService;
+use Service;
 
-class SpecialTypeServiceImpl implements SpecialTypeService
+class SpecialTypeServiceImpl extends Service implements SpecialTypeService
 {
 
-    public function getSpecialType($id)
-    {
-        return $id."121212121212";
+    public function addSpecialType($special_id, $type_id){
+
+        return $this -> getModel() -> addSpecialType($special_id, $type_id);
+    }
+
+    public function getTypesById($special_id){
+
+        return $this -> getModel() -> getTypesById($special_id);
+    }
+
+    public function deleteType($special_id){
+
+        return $this -> getModel() -> deleteType($special_id);
     }
 
 }

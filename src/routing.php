@@ -10,18 +10,39 @@ return [
                 'method' => 'getSpecial',
                 'parameters' => ['$id'],
             ],
-
+            [
+                'method' => 'getSpecialCache',
+                'parameters' => ['$id', '$use_cache'],
+            ],
             [
                 'method' => 'addSpecial',
-                'parameters' => ['$special', '$name'],
-            ]
+                'parameters' => ['$special'],
+            ],
+            [
+                'method' => 'updateSpecial',
+                'parameters' => ['$id', '$fields'],
+            ],
+            [
+                'method' => 'deleteSpecial',
+                'parameters' => ['$id'],
+            ],
+
         ],
+
         'SpecialType' => [
 
             [
-                'method' => 'getSpecialType',
-                'parameters' => ['$id'],
-            ]
+                'method' => 'addSpecialType',
+                'parameters' => ['$special_id', '$type_id'],
+            ],
+            [
+                'method' => 'getTypesById',
+                'parameters' => ['$special_id'],
+            ],
+            [
+                'method' => 'deleteType',
+                'parameters' => ['$special_id'],
+            ],
         ],
 
     ],
