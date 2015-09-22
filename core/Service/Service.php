@@ -1,7 +1,8 @@
 <?php
 namespace core\Service;
+use core\Contracts\Service\Service as ServiceContract;
 
-class Service
+class Service implements ServiceContract
 {
     public function getModel()
     {

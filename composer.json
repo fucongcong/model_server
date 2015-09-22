@@ -1,5 +1,6 @@
 {
     "require": {
-        "hprose/hprose": "dev-master"
+        "hprose/hprose": "dev-master",
+        "phpunit/phpunit": "4.*"
     }
 }

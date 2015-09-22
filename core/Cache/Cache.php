@@ -1,5 +1,6 @@
 <?php
 namespace core\Cache;
+use Exception;
 
 class Cache{
     protected $connected;
@@ -22,7 +23,7 @@ class Cache{
         if (class_exists($cacheClass))
             $cache = new $cacheClass($options);
         else
-            throw_exception(L('_CACHE_TYPE_INVALID_') . ':' . $type);
+            throw new Exception(L('_CACHE_TYPE_INVALID_') . ':' . $type);
         return $cache;
     }
 
