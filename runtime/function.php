@@ -1,58 +1,90 @@
 <?php
-
+use ReflectionClass;
         
-function Special_Special_getSpecial($id) {
+function Special_Special_getSpecial($parameters) {
 
-    $class = new src\Services\Special\Impl\SpecialServiceImpl();
-    return $class -> getSpecial($id);
+    $reflector = new ReflectionClass('src\Services\Special\Impl\SpecialServiceImpl');
+
+    $instanc =$reflector->newInstanceArgs();
+    $method = $reflector->getmethod('getSpecial');
+    return $method->invokeArgs($instanc, $parameters);
+
 }
 
 
-function Special_Special_getSpecialCache($id,$use_cache) {
+function Special_Special_getSpecialCache($parameters) {
 
-    $class = new src\Services\Special\Impl\SpecialServiceImpl();
-    return $class -> getSpecialCache($id,$use_cache);
+    $reflector = new ReflectionClass('src\Services\Special\Impl\SpecialServiceImpl');
+
+    $instanc =$reflector->newInstanceArgs();
+    $method = $reflector->getmethod('getSpecialCache');
+    return $method->invokeArgs($instanc, $parameters);
+
 }
 
 
-function Special_Special_addSpecial($special) {
+function Special_Special_updateSpecial($parameters) {
 
-    $class = new src\Services\Special\Impl\SpecialServiceImpl();
-    return $class -> addSpecial($special);
+    $reflector = new ReflectionClass('src\Services\Special\Impl\SpecialServiceImpl');
+
+    $instanc =$reflector->newInstanceArgs();
+    $method = $reflector->getmethod('updateSpecial');
+    return $method->invokeArgs($instanc, $parameters);
+
 }
 
 
-function Special_Special_updateSpecial($id,$fields) {
+function Special_Special_deleteSpecial($parameters) {
 
-    $class = new src\Services\Special\Impl\SpecialServiceImpl();
-    return $class -> updateSpecial($id,$fields);
+    $reflector = new ReflectionClass('src\Services\Special\Impl\SpecialServiceImpl');
+
+    $instanc =$reflector->newInstanceArgs();
+    $method = $reflector->getmethod('deleteSpecial');
+    return $method->invokeArgs($instanc, $parameters);
+
 }
 
 
-function Special_Special_deleteSpecial($id) {
+function Special_Special_findSpecials($parameters) {
 
-    $class = new src\Services\Special\Impl\SpecialServiceImpl();
-    return $class -> deleteSpecial($id);
+    $reflector = new ReflectionClass('src\Services\Special\Impl\SpecialServiceImpl');
+
+    $instanc =$reflector->newInstanceArgs();
+    $method = $reflector->getmethod('findSpecials');
+    return $method->invokeArgs($instanc, $parameters);
+
 }
 
 
-function Special_SpecialType_addSpecialType($special_id,$type_id) {
+function Special_SpecialType_addSpecialType($parameters) {
 
-    $class = new src\Services\Special\Impl\SpecialTypeServiceImpl();
-    return $class -> addSpecialType($special_id,$type_id);
+    $reflector = new ReflectionClass('src\Services\Special\Impl\SpecialTypeServiceImpl');
+
+    $instanc =$reflector->newInstanceArgs();
+    $method = $reflector->getmethod('addSpecialType');
+    return $method->invokeArgs($instanc, $parameters);
+
 }
 
 
-function Special_SpecialType_getTypesById($special_id) {
+function Special_SpecialType_getTypesById($parameters) {
 
-    $class = new src\Services\Special\Impl\SpecialTypeServiceImpl();
-    return $class -> getTypesById($special_id);
+    $reflector = new ReflectionClass('src\Services\Special\Impl\SpecialTypeServiceImpl');
+
+    $instanc =$reflector->newInstanceArgs();
+    $method = $reflector->getmethod('getTypesById');
+    return $method->invokeArgs($instanc, $parameters);
+
 }
 
 
-function Special_SpecialType_deleteType($special_id) {
+function Special_SpecialType_deleteType($parameters) {
 
-    $class = new src\Services\Special\Impl\SpecialTypeServiceImpl();
-    return $class -> deleteType($special_id);
+    $reflector = new ReflectionClass('src\Services\Special\Impl\SpecialTypeServiceImpl');
+
+    $instanc =$reflector->newInstanceArgs();
+    $method = $reflector->getmethod('deleteType');
+    return $method->invokeArgs($instanc, $parameters);
+
 }
 
