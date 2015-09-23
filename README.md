@@ -54,27 +54,18 @@ src/routing.php（配置你所需要向外暴露的服务层的接口信息）
         //该模块下得服务
         'Special' => [
             //该服务下提供的接口服务
-            [
-                'method' => 'getSpecial',
-                'parameters' => ['$id'],
-            ],
+            'getSpecial',
+            'getSpecialCache',
+            'updateSpecial',
+            'deleteSpecial',
         ],
-        //该模块下得服务
-        'SpecialType' => [
 
-            [
-                'method' => 'addSpecialType',
-                'parameters' => ['$special_id', '$type_id'],
-            ],
-            [
-                'method' => 'getTypesById',
-                'parameters' => ['$special_id'],
-            ],
-            [
-                'method' => 'deleteType',
-                'parameters' => ['$special_id'],
-            ],
+        'SpecialType' => [
+            'addSpecialType',
+            'getTypesById',
+            'deleteType',
         ],
+
     ],
 
 ####4常用的函数介绍
@@ -111,3 +102,9 @@ src/routing.php（配置你所需要向外暴露的服务层的接口信息）
 ####5单元测试
     //测试服务层所有接口
     phpunit --bootstrap test.php src/
+####6运行
+
+    php index.php
+
+    客户端模拟测试：
+    php client。php

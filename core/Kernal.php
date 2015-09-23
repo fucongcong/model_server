@@ -52,7 +52,7 @@ class Kernal
 
                 foreach ($serviceMethods as $method) {
 
-                   $functionName = $modelName."_".$serviceName."_".$method['method'];
+                   $functionName = $modelName."_".$serviceName."_".$method;
                    $server->addFunction($functionName);
                 }
             }

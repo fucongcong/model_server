@@ -44,16 +44,11 @@ class Container implements ContainerContract
 
                 foreach ($serviceMethods as $method) {
 
-                    if($this -> checkFunction($className, $method['method'])) {
+                    if($this -> checkFunction($className, $method)) {
 
-                        $functionName = $modelName."_".$serviceName."_".$method['method'];
+                        $functionName = $modelName."_".$serviceName."_".$method;
 
-                        if(!isset($method['parameters'])) {
-
-                            $method['parameters'] = [];
-                        }
-
-                        $functions[$functionName] = [$className, $method['method'], $method['parameters']];
+                        $functions[$functionName] = [$className, $method];
                     }
 
                 }
@@ -67,20 +62,24 @@ class Container implements ContainerContract
     private function createFunction($functions)
     {
         $data = "<?php
-
+use ReflectionClass;
         ";
         foreach ($functions as $key => $function) {
 
             $className = $function[0];
             $method = $function[1];
-            $parameters = implode(",", $function[2]);
+            $parameters = '$parameters';
             $var = "$";
 
             $data.= "
 function {$key}({$parameters}) {
 
-    {$var}class = new {$className}();
-    return {$var}class -> {$method}({$parameters});
+    {$var}reflector = new ReflectionClass('{$className}');
+
+    {$var}instanc ={$var}reflector->newInstanceArgs();
+    {$var}method = {$var}reflector->getmethod('{$method}');
+    return {$var}method->invokeArgs({$var}instanc, {$parameters});
+
 }
 
 ";
